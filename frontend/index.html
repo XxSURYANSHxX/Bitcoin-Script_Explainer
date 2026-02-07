@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bitcoin Script Explainer - An educational tool for understanding Bitcoin Script opcodes and execution">
+    <title>Bitcoin Script Explainer</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">₿</span>
+                <h1>Bitcoin Script Explainer</h1>
+            </div>
+            <p class="tagline">Understand Bitcoin Script step by step</p>
+        </header>
+
+        <main class="main-content">
+            <section class="input-section">
+                <div class="input-header">
+                    <h2>Enter Bitcoin Script (ASM Format)</h2>
+                    <button type="button" class="example-btn" id="loadExample">Load Example</button>
+                </div>
+                <textarea 
+                    id="scriptInput" 
+                    class="script-input" 
+                    placeholder="Enter your Bitcoin Script here...&#10;Example: OP_DUP OP_HASH160 ab6807 OP_EQUALVERIFY OP_CHECKSIG"
+                    spellcheck="false"
+                ></textarea>
+                <button type="button" id="explainBtn" class="explain-btn">
+                    <span class="btn-icon">▶</span>
+                    Explain Script
+                </button>
+            </section>
+
+            <section class="output-section" id="outputSection">
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <span>Analyzing script...</span>
+                </div>
+
+                <div class="error-message" id="errorMessage">
+                    <span class="error-icon">⚠</span>
+                    <span id="errorText"></span>
+                </div>
+
+                <div class="results" id="results">
+                    <div class="result-card script-type-card">
+                        <h3>Script Type</h3>
+                        <div class="script-type" id="scriptType"></div>
+                    </div>
+
+                    <div class="result-card execution-card">
+                        <h3>Step-by-Step Execution</h3>
+                        <div class="steps-container" id="stepsContainer"></div>
+                    </div>
+
+                    <div class="result-card summary-card">
+                        <h3>Summary</h3>
+                        <div class="summary" id="summary"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="disclaimer">
+                <strong>⚠️ Educational Tool</strong>
+                <p>This is a symbolic simulator for learning purposes only. It does not perform real cryptographic operations and should not be used for validating actual Bitcoin transactions.</p>
+            </div>
+            <div class="supported-opcodes">
+                <strong>Supported Opcodes:</strong>
+                <span class="opcode-tag">OP_DUP</span>
+                <span class="opcode-tag">OP_HASH160</span>
+                <span class="opcode-tag">OP_EQUAL</span>
+                <span class="opcode-tag">OP_EQUALVERIFY</span>
+                <span class="opcode-tag">OP_CHECKSIG</span>
+                <span class="opcode-tag">OP_CHECKMULTISIG</span>
+                <span class="opcode-tag">OP_VERIFY</span>
+                <span class="opcode-tag">OP_RETURN</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

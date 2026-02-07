@@ -1,0 +1,13 @@
+# Bitcoin Script Explainer - Requirements
+
+# Web Framework
+fastapi>=0.104.0
+
+# ASGI Server
+uvicorn[standard]>=0.24.0
+
+# Data Validation
+pydantic>=2.5.0
+
+# HTTP Client (for testing)
+httpx>=0.25.0
