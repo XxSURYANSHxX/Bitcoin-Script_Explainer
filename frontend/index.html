@@ -1,92 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bitcoin Script Explainer - An educational tool for understanding Bitcoin Script opcodes and execution">
-    <title>Bitcoin Script Explainer</title>
+    <meta name="description"
+        content="Bitcoin Script Explainer - An educational tool for understanding Bitcoin Script opcodes and stack-based execution">
+    <title>Bitcoin Script Explainer | Learn Bitcoin Script</title>
     <link rel="stylesheet" href="/static/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="logo">
-                <span class="logo-icon">₿</span>
-                <h1>Bitcoin Script Explainer</h1>
+    <!-- Background gradient glow -->
+    <div class="cosmos-bg">
+        <div class="gradient-orb gradient-orb-1"></div>
+        <div class="gradient-orb gradient-orb-2"></div>
+        <div class="gradient-orb gradient-orb-3"></div>
+    </div>
+
+    <!-- Solar System with Orbital Lines -->
+    <div class="solar-system">
+        <!-- Central Sun/Star -->
+        <div class="sun"></div>
+
+        <!-- Orbital Paths -->
+        <div class="orbit orbit-1"></div>
+        <div class="orbit orbit-2"></div>
+        <div class="orbit orbit-3"></div>
+        <div class="orbit orbit-4"></div>
+        <div class="orbit orbit-5"></div>
+
+        <!-- Planet Orbs with Crypto Symbols -->
+        <div class="planet planet-1">
+            <span class="planet-symbol">₿</span>
+        </div>
+        <div class="planet planet-2">
+            <span class="planet-symbol">Ξ</span>
+        </div>
+        <div class="planet planet-3">
+            <span class="planet-symbol">◎</span>
+        </div>
+        <div class="planet planet-4">
+            <span class="planet-symbol">⟠</span>
+        </div>
+        <div class="planet planet-5">
+            <span class="planet-symbol">🔗</span>
+        </div>
+
+        <!-- Small moons/asteroids -->
+        <div class="moon moon-1"></div>
+        <div class="moon moon-2"></div>
+        <div class="moon moon-3"></div>
+
+        <!-- Stars -->
+        <div class="star star-1"></div>
+        <div class="star star-2"></div>
+        <div class="star star-3"></div>
+        <div class="star star-4"></div>
+        <div class="star star-5"></div>
+    </div>
+
+    <!-- Floating Corner Orbs -->
+    <div class="floating-orbs">
+        <!-- Top left -->
+        <div class="float-orb orb-cream" style="top: 8%; left: 5%;"></div>
+        <!-- Top right -->
+        <div class="float-orb orb-purple" style="top: 12%; right: 8%;"></div>
+        <!-- Mid left -->
+        <div class="float-orb orb-teal" style="top: 35%; left: 3%;"></div>
+        <!-- Mid right -->
+        <div class="float-orb orb-pink" style="top: 45%; right: 5%;"></div>
+        <!-- Bottom left -->
+        <div class="float-orb orb-orange" style="bottom: 25%; left: 6%;"></div>
+        <!-- Bottom right -->
+        <div class="float-orb orb-blue" style="bottom: 20%; right: 4%;"></div>
+        <!-- Small accent orbs -->
+        <div class="float-orb orb-small orb-gold" style="top: 20%; left: 12%;"></div>
+        <div class="float-orb orb-small orb-violet" style="bottom: 35%; right: 10%;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span class="logo-symbol">₿</span>
+            <span class="logo-text">ScriptExplainer</span>
+        </div>
+        <div class="nav-links">
+            <a href="#hero" class="nav-link">Learn</a>
+            <a href="#explainer" class="nav-link active">Build</a>
+            <a href="#examples" class="nav-link">Explore</a>
+            <a href="#opcodes" class="nav-link">Opcodes</a>
+        </div>
+        <div class="tracker-stats">
+            <div class="tracker-stat">
+                <span class="tracker-value" id="lifetimeViews">--</span>
+                <span class="tracker-label">Views</span>
             </div>
-            <p class="tagline">Understand Bitcoin Script step by step</p>
-        </header>
+            <div class="tracker-stat">
+                <span class="tracker-value" id="activeUsers">--</span>
+                <span class="tracker-label">Active</span>
+            </div>
+        </div>
+        <div class="nav-actions">
+            <a href="/docs" class="nav-btn" target="_blank">Get SCRIPT →</a>
+        </div>
+    </nav>
 
-        <main class="main-content">
-            <section class="input-section">
-                <div class="input-header">
-                    <h2>Enter Bitcoin Script (ASM Format)</h2>
-                    <button type="button" class="example-btn" id="loadExample">Load Example</button>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>Educational Tool for Bitcoin Development</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Build on the</span>
+                <span class="title-line title-gradient">Bitcoin Script.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Build understanding using the best-in-class educational tools
+                and visualization services.
+            </p>
+
+            <!-- Stats Row -->
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-value" data-count="50">50+</div>
+                    <div class="stat-label">Opcodes</div>
                 </div>
-                <textarea 
-                    id="scriptInput" 
-                    class="script-input" 
-                    placeholder="Enter your Bitcoin Script here...&#10;Example: OP_DUP OP_HASH160 ab6807 OP_EQUALVERIFY OP_CHECKSIG"
-                    spellcheck="false"
-                ></textarea>
-                <button type="button" id="explainBtn" class="explain-btn">
-                    <span class="btn-icon">▶</span>
-                    Explain Script
-                </button>
-            </section>
+                <div class="stat-card">
+                    <div class="stat-value" data-count="6">6</div>
+                    <div class="stat-label">Script Types</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" data-count="100">100%</div>
+                    <div class="stat-label">Free & Open</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <section class="output-section" id="outputSection">
+    <!-- Main Explainer Section -->
+    <section id="explainer" class="explainer-section">
+        <div class="section-header">
+            <h2 class="section-title">Script Analyzer</h2>
+            <p class="section-subtitle">Enter any Bitcoin Script to see step-by-step execution</p>
+        </div>
+
+        <div class="explainer-container">
+            <!-- Input Card -->
+            <div class="cosmos-card input-card">
+                <div class="card-header">
+                    <h3>Enter Bitcoin Script</h3>
+                    <button type="button" class="example-btn" id="loadExample">
+                        Load Example
+                    </button>
+                </div>
+                <textarea id="scriptInput" class="script-input"
+                    placeholder="Enter your Bitcoin Script here...&#10;Example: OP_DUP OP_HASH160 ab6807 OP_EQUALVERIFY OP_CHECKSIG"
+                    spellcheck="false"></textarea>
+                <button type="button" id="explainBtn" class="explain-btn">
+                    <span class="btn-text">Explain Script →</span>
+                </button>
+            </div>
+
+            <!-- Output Section -->
+            <div class="output-section" id="outputSection">
+                <!-- Loading State -->
                 <div class="loading" id="loading">
-                    <div class="spinner"></div>
+                    <div class="loading-spinner">
+                        <div class="spinner-ring"></div>
+                        <div class="spinner-ring"></div>
+                        <div class="spinner-ring"></div>
+                    </div>
                     <span>Analyzing script...</span>
                 </div>
 
+                <!-- Error State -->
                 <div class="error-message" id="errorMessage">
-                    <span class="error-icon">⚠</span>
+                    <span class="error-icon">⚠️</span>
                     <span id="errorText"></span>
                 </div>
 
+                <!-- Results -->
                 <div class="results" id="results">
-                    <div class="result-card script-type-card">
-                        <h3>Script Type</h3>
+                    <!-- Script Type Card -->
+                    <div class="cosmos-card result-card">
+                        <div class="card-header">
+                            <h3>Script Type</h3>
+                        </div>
                         <div class="script-type" id="scriptType"></div>
                     </div>
 
-                    <div class="result-card execution-card">
-                        <h3>Step-by-Step Execution</h3>
+                    <!-- Execution Steps Card -->
+                    <div class="cosmos-card result-card">
+                        <div class="card-header">
+                            <h3>Step-by-Step Execution</h3>
+                            <div class="step-controls">
+                                <button class="step-btn" id="prevStep">←</button>
+                                <span class="step-counter" id="stepCounter">0/0</span>
+                                <button class="step-btn" id="nextStep">→</button>
+                            </div>
+                        </div>
                         <div class="steps-container" id="stepsContainer"></div>
                     </div>
 
-                    <div class="result-card summary-card">
-                        <h3>Summary</h3>
+                    <!-- Summary Card -->
+                    <div class="cosmos-card result-card">
+                        <div class="card-header">
+                            <h3>Summary</h3>
+                            <button class="copy-btn" id="copyResult" title="Copy">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                </svg>
+                            </button>
+                        </div>
                         <div class="summary" id="summary"></div>
                     </div>
                 </div>
-            </section>
-        </main>
+            </div>
+        </div>
+    </section>
 
-        <footer class="footer">
-            <div class="disclaimer">
-                <strong>⚠️ Educational Tool</strong>
-                <p>This is a symbolic simulator for learning purposes only. It does not perform real cryptographic operations and should not be used for validating actual Bitcoin transactions.</p>
+    <!-- Quick Examples Section -->
+    <section id="examples" class="examples-section">
+        <div class="section-header">
+            <h2 class="section-title">Explore Scripts</h2>
+            <p class="section-subtitle">Click any example to load it into the analyzer</p>
+        </div>
+        <div class="examples-grid">
+            <div class="example-card"
+                data-script="OP_DUP OP_HASH160 ab68025513c3dbd2f7b92a94e0581f5d50f654e7 OP_EQUALVERIFY OP_CHECKSIG">
+                <div class="example-icon">🔐</div>
+                <div class="example-badge">P2PKH</div>
+                <h4>Pay-to-Public-Key-Hash</h4>
+                <p>The most common Bitcoin script type for standard transactions</p>
             </div>
-            <div class="supported-opcodes">
-                <strong>Supported Opcodes:</strong>
-                <span class="opcode-tag">OP_DUP</span>
-                <span class="opcode-tag">OP_HASH160</span>
-                <span class="opcode-tag">OP_EQUAL</span>
-                <span class="opcode-tag">OP_EQUALVERIFY</span>
-                <span class="opcode-tag">OP_CHECKSIG</span>
-                <span class="opcode-tag">OP_CHECKMULTISIG</span>
-                <span class="opcode-tag">OP_VERIFY</span>
-                <span class="opcode-tag">OP_RETURN</span>
+            <div class="example-card" data-script="OP_HASH160 89abcdefabbaabbaabbaabbaabbaabbaabbaabba OP_EQUAL">
+                <div class="example-icon">📜</div>
+                <div class="example-badge segwit">P2SH</div>
+                <h4>Pay-to-Script-Hash</h4>
+                <p>Used for multisig wallets and wrapped SegWit</p>
             </div>
-        </footer>
-    </div>
+            <div class="example-card" data-script="OP_0 ab68025513c3dbd2f7b92a94e0581f5d50f654e7">
+                <div class="example-icon">⚡</div>
+                <div class="example-badge native">P2WPKH</div>
+                <h4>Native SegWit</h4>
+                <p>Lower fees and better security with witness data</p>
+            </div>
+            <div class="example-card" data-script="3 5 OP_ADD 8 OP_EQUAL">
+                <div class="example-icon">🔢</div>
+                <div class="example-badge math">Arithmetic</div>
+                <h4>Math Operations</h4>
+                <p>Stack-based calculations and comparisons</p>
+            </div>
+            <div class="example-card" data-script="OP_RETURN 48656c6c6f20426974636f696e21">
+                <div class="example-icon">📝</div>
+                <div class="example-badge data">OP_RETURN</div>
+                <h4>Data Storage</h4>
+                <p>Embed arbitrary data in the blockchain</p>
+            </div>
+            <div class="example-card"
+                data-script="2 0279be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798 02c6047f9441ed7d6d3045406e95c07cd85c778e4b8cef3ca7abac09b95c709ee5 2 OP_CHECKMULTISIG">
+                <div class="example-icon">👥</div>
+                <div class="example-badge multisig">Multisig</div>
+                <h4>Multi-Signature</h4>
+                <p>Require multiple signatures to spend</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opcodes Reference Section -->
+    <section id="opcodes" class="opcodes-section">
+        <div class="section-header">
+            <h2 class="section-title">Opcode Reference</h2>
+            <p class="section-subtitle">Browse all supported Bitcoin Script operations</p>
+        </div>
+
+        <div class="opcodes-container">
+            <!-- Search and Filter -->
+            <div class="opcodes-toolbar">
+                <input type="text" id="opcodeSearch" class="opcode-search" placeholder="Search opcodes...">
+                <div class="opcode-tabs">
+                    <button class="opcode-tab active" data-category="all">All</button>
+                    <button class="opcode-tab" data-category="stack">Stack</button>
+                    <button class="opcode-tab" data-category="arithmetic">Math</button>
+                    <button class="opcode-tab" data-category="crypto">Crypto</button>
+                    <button class="opcode-tab" data-category="logic">Logic</button>
+                    <button class="opcode-tab" data-category="flow">Flow</button>
+                </div>
+            </div>
+
+            <!-- Opcodes Grid -->
+            <div class="opcodes-grid" id="opcodesGrid"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-disclaimer">
+                <strong>⚠️ Educational Tool Only</strong>
+                <p>This tool uses symbolic execution for educational purposes. Do not use for validating actual Bitcoin
+                    transactions.</p>
+            </div>
+            <div class="footer-links">
+                Made by Suryansh Maurya and Titas Ghosh
+            </div>
+        </div>
+    </footer>
 
     <script src="/static/app.js"></script>
 </body>
+
 </html>
