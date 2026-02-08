@@ -895,6 +895,52 @@ body {
 }
 
 /* ============================================
+   TRACKER STATS PANEL
+   ============================================ */
+.tracker-stats {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    padding: 8px 16px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(10px);
+}
+
+.tracker-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.tracker-value {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--cosmos-gold);
+    text-shadow: 0 0 10px rgba(247, 147, 26, 0.4);
+    min-width: 24px;
+    text-align: center;
+}
+
+.tracker-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Responsive: hide tracker on small screens */
+@media (max-width: 768px) {
+    .tracker-stats {
+        display: none;
+    }
+}
+
+/* ============================================
    HERO SECTION
    ============================================ */
 .hero {

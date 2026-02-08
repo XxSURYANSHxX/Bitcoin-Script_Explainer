@@ -2,6 +2,76 @@
  * Bitcoin Script Explainer - Cosmos Solar System UI
  */
 
+// ============================================
+// Anonymous Usage Tracking (Privacy-Safe)
+// ============================================
+
+/**
+ * Generate a UUID v4 for anonymous session tracking.
+ */
+function generateUUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        const r = Math.random() * 16 | 0;
+        const v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
+
+/**
+ * Get or create anonymous session ID.
+ */
+function getSessionId() {
+    let sessionId = sessionStorage.getItem('btc_session_id');
+    if (!sessionId) {
+        sessionId = generateUUID();
+        sessionStorage.setItem('btc_session_id', sessionId);
+    }
+    return sessionId;
+}
+
+/**
+ * Track an anonymous event.
+ */
+async function trackEvent(eventType) {
+    try {
+        await fetch('/track', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                session_id: getSessionId(),
+                event_type: eventType
+            })
+        });
+    } catch (error) {
+        console.debug('Tracking failed:', error);
+    }
+}
+
+/**
+ * Fetch and update live stats display.
+ */
+async function updateLiveStats() {
+    try {
+        const response = await fetch('/stats');
+        if (response.ok) {
+            const data = await response.json();
+            const lifetimeEl = document.getElementById('lifetimeViews');
+            const activeEl = document.getElementById('activeUsers');
+            if (lifetimeEl) lifetimeEl.textContent = data.lifetime_views;
+            if (activeEl) activeEl.textContent = data.current_active_users;
+        }
+    } catch (error) {
+        console.debug('Stats update failed:', error);
+    }
+}
+
+// Initialize tracking on page load
+window.addEventListener('load', () => {
+    trackEvent('page_visit');
+    updateLiveStats();
+    setInterval(updateLiveStats, 30000);
+});
+
 // DOM Elements
 const scriptInput = document.getElementById('scriptInput');
 const explainBtn = document.getElementById('explainBtn');
@@ -271,6 +341,10 @@ async function handleExplain() {
         }
 
         displayResults(data);
+
+        // Track successful script explanation
+        trackEvent('script_explained');
+        updateLiveStats();
 
     } catch (error) {
         showError(error.message || 'An error occurred.');

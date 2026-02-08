@@ -1,0 +1,92 @@
+[
+  {
+    "session_id": "test-session-123",
+    "event_type": "page_visit",
+    "timestamp": "2026-02-08T13:07:35.759025"
+  },
+  {
+    "session_id": "browser-test-456",
+    "event_type": "page_visit",
+    "timestamp": "2026-02-08T13:15:39.070206"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "page_visit",
+    "timestamp": "2026-02-08T13:24:04.396025"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "page_visit",
+    "timestamp": "2026-02-08T13:29:08.050433"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "script_explained",
+    "timestamp": "2026-02-08T13:29:55.555172"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "page_visit",
+    "timestamp": "2026-02-08T13:36:12.836583"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "script_explained",
+    "timestamp": "2026-02-08T13:36:44.622960"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "page_visit",
+    "timestamp": "2026-02-08T13:36:57.826903"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "script_explained",
+    "timestamp": "2026-02-08T13:37:01.672400"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "page_visit",
+    "timestamp": "2026-02-08T13:41:18.768324"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "script_explained",
+    "timestamp": "2026-02-08T13:41:52.342529"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "script_explained",
+    "timestamp": "2026-02-08T13:42:48.286394"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "script_explained",
+    "timestamp": "2026-02-08T13:45:28.705254"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "page_visit",
+    "timestamp": "2026-02-08T13:50:11.016828"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "script_explained",
+    "timestamp": "2026-02-08T13:50:20.066956"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "script_explained",
+    "timestamp": "2026-02-08T13:50:29.057047"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "script_explained",
+    "timestamp": "2026-02-08T13:50:38.644989"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "page_visit",
+    "timestamp": "2026-02-08T13:52:01.331965"
+  }
+]

@@ -13,6 +13,10 @@ import os
 from .models import ScriptRequest, ScriptExplanation, ErrorResponse
 from .explainer import explain_script, get_opcode_info
 from .parser import ParseError
+from .tracker import (
+    TrackRequest, StatsResponse, ActivityResponse,
+    add_event, get_stats, get_recent_activity
+)
 
 
 # Create FastAPI application
@@ -134,6 +138,63 @@ async def list_opcodes() -> dict:
 async def health_check() -> dict:
     """Health check endpoint."""
     return {"status": "healthy", "service": "btc-script-explainer"}
+
+
+# ============================================
+# Usage Tracking Endpoints (Anonymous)
+# ============================================
+
+@app.post(
+    "/track",
+    summary="Track anonymous usage event",
+    description="Record an anonymous page visit or script explanation event."
+)
+async def track_event(request: TrackRequest) -> dict:
+    """
+    Track an anonymous usage event.
+    
+    Accepts:
+    - session_id: Anonymous UUID (generated client-side)
+    - event_type: 'page_visit' or 'script_explained'
+    
+    No personal data is collected.
+    """
+    success = add_event(request.session_id, request.event_type)
+    return {"success": success}
+
+
+@app.get(
+    "/stats",
+    response_model=StatsResponse,
+    summary="Get usage statistics",
+    description="Get lifetime views, scripts explained, and current active users."
+)
+async def usage_stats() -> StatsResponse:
+    """
+    Get anonymous usage statistics.
+    
+    Returns:
+    - lifetime_views: Total page visits
+    - total_scripts_explained: Total scripts analyzed
+    - current_active_users: Unique sessions in last 5 minutes
+    """
+    return get_stats()
+
+
+@app.get(
+    "/activity",
+    response_model=ActivityResponse,
+    summary="Get recent activity",
+    description="Get the last 10 anonymous usage events."
+)
+async def recent_activity() -> ActivityResponse:
+    """
+    Get recent activity feed.
+    
+    Returns the last 10 events with event_type and timestamp.
+    Session IDs are not exposed for privacy.
+    """
+    return get_recent_activity()
 
 
 # Serve static frontend files
