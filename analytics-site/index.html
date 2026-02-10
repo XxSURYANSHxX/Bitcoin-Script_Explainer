@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Script Explainer - Analytics Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-symbol">₿</span>
+                    <span class="logo-text">Analytics Dashboard</span>
+                </div>
+                <div class="status-indicator">
+                    <span class="live-dot"></span>
+                    <span class="status-text">Live</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">👁️</div>
+                <div class="stat-content">
+                    <h3 class="stat-label">Lifetime Views</h3>
+                    <p class="stat-value" id="lifetimeViews">--</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-content">
+                    <h3 class="stat-label">Active Users</h3>
+                    <p class="stat-value" id="activeUsers">--</p>
+                    <p class="stat-subtext">Last 5 minutes</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📜</div>
+                <div class="stat-content">
+                    <h3 class="stat-label">Scripts Explained</h3>
+                    <p class="stat-value" id="totalScripts">--</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🔗</div>
+                <div class="stat-content">
+                    <h3 class="stat-label">Unique Sessions</h3>
+                    <p class="stat-value" id="uniqueSessions">--</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Activity Feed -->
+        <div class="activity-section">
+            <div class="section-header">
+                <h2>Recent Activity</h2>
+                <button class="refresh-btn" id="refreshBtn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2" />
+                    </svg>
+                    Refresh
+                </button>
+            </div>
+            <div class="activity-feed" id="activityFeed">
+                <div class="activity-loading">Loading activity...</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <p>Bitcoin Script Explainer Analytics • Private Dashboard</p>
+            <p class="footer-version">v1.0.0 • Auto-refreshes every 5 seconds</p>
+        </footer>
+    </div>
+
+    <script src="./dashboard.js"></script>
+</body>
+
+</html>

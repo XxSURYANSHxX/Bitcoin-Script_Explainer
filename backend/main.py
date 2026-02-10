@@ -185,20 +185,20 @@ async def usage_stats() -> StatsResponse:
     "/activity",
     response_model=ActivityResponse,
     summary="Get recent activity",
-    description="Get the last 10 anonymous usage events."
+    description="Get the last 20 anonymous usage events."
 )
 async def recent_activity() -> ActivityResponse:
     """
     Get recent activity feed.
     
-    Returns the last 10 events with event_type and timestamp.
+    Returns the last 20 events with event_type and timestamp.
     Session IDs are not exposed for privacy.
     """
-    return get_recent_activity()
+    return get_recent_activity(limit=20)
 
 
 # Serve static frontend files
-frontend_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend")
+frontend_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "explainer-site")
 
 if os.path.exists(frontend_path):
     app.mount("/static", StaticFiles(directory=frontend_path), name="static")

@@ -88,5 +88,40 @@
     "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
     "event_type": "page_visit",
     "timestamp": "2026-02-08T13:52:01.331965"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "script_explained",
+    "timestamp": "2026-02-10T03:17:28.164413"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "page_visit",
+    "timestamp": "2026-02-10T14:06:59.749879"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "page_visit",
+    "timestamp": "2026-02-10T17:49:02.388401"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "page_visit",
+    "timestamp": "2026-02-10T17:49:09.262845"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "page_visit",
+    "timestamp": "2026-02-10T17:50:11.058896"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "page_visit",
+    "timestamp": "2026-02-10T17:53:06.388408"
+  },
+  {
+    "session_id": "9bc6d325-77de-4e2a-965a-81c0624a3a38",
+    "event_type": "page_visit",
+    "timestamp": "2026-02-10T17:54:15.770991"
   }
 ]
